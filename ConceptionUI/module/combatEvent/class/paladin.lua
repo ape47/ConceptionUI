@@ -22,10 +22,10 @@ function D.LOAD.M:LoadCombatEventClassCFG()
 		--ex:[技能] ACTIVATE
 		--ex:[技能] DEACTIVATE
 		CFG['self'] = {  -- 自身技能喊話
-			[498]    = true,	-- 聖佑術
-			[642]    = true,	-- 聖盾術
-			[1022]   = true,	-- 保護聖禦
-			[1038]   = true,	-- 拯救聖禦
+			[498]    = false,	-- 聖佑術
+			[642]    = false,	-- 聖盾術
+			[1022]   = false,	-- 保護聖禦
+			[1038]   = false,	-- 拯救聖禦
 			[31850]  = true,	-- 忠誠防衛者
 			[70940]  = true,	-- 神性守護
 			[82327]  = true,	-- 神聖光輝
