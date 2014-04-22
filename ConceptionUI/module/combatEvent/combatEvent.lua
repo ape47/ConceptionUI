@@ -364,8 +364,9 @@ function D.LOAD.M:LoadCombatEvent()
 	function CombatEvent:UNIT_SPELLCAST_SUCCEEDED(unit, spellName, rank, line, spellID)
 		if not unit then return end
 		if not COMMON[spellID] then return end
+		--print(unit, spellName, rank, line, spellID)
 		self:AddNotice(1, 1, 1, '%s > %s%s', ColoredName(unit), GetSpellIcon(spellID), spellName)
-		self:AddMessage(self:GetUnitChannel(unit), '[%s] > %s', UnitName(unit), GetSpellLink(spellID))
+		self:AddMessage(self:GetUnitChannel(unit), '[%s] > %s', UnitName(unit), GetSpellLink(spellID) or GetSpellLink(COMMON[spellID]) or '['..spellName..']')
 		return	
 	end
 
