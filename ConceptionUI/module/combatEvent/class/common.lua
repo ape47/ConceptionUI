@@ -37,6 +37,10 @@ function D.LOAD.I:LoadCombatEventCFG()
 			[127800] = true, -- Turnip Punching Bag
 			[130505] = true, -- Anatomical Dummy
 			[147412] = true, -- Elixir of Wandering Spirits
+			[91760]  = true, -- Bones of Transformation
+			[91771]  = true, -- Wisp Amulet
+			[96312]  = true, -- Kalytha's Haunted Locket
+			[46354]  = 46355, -- Orb of the Sin'dorei 46354 46355 46356
 		-- Banquets
 			[104958] = true, -- Pandaren Banquet
 			[105193] = true, -- Great Pandaren Banquet
