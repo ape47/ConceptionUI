@@ -105,7 +105,7 @@ local function SetUnit(tip, unit)
 		end
 		local status = dead and ' |cFF616161[DEAD]' or UnitIsAFK(unit) and ' |cFF9E6100[AFK]' or UnitIsDND(unit) and ' |cFF9E0000[DND]' or  UnitIsConnected(unit) and '' or ' |cFF616161[DC]'
 		tip:AddDoubleLine(('%s|c%s%s%s|r'):format(UnitIcon(unit), class_color, name, status), ' ')
-		if not InspectFrame:IsShown() and CanInspect(unit) then
+		if InspectFrame and not InspectFrame:IsShown() and CanInspect(unit) then
 			NotifyInspect(unit)
 			tip:RegisterEvent('INSPECT_READY')
 		end
