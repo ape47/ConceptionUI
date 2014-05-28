@@ -21,6 +21,7 @@ function D.LOAD.I:LoadCombatEventCFG()
 			[54735]  = true, -- Electromagnetic Pulse
 			[84348]  = true, -- nvisibility Field
 		-- Toys
+			[6405]   = true, -- Dartol's Rod of Transformation
 			[49844]  = true, -- Direbrew's Remote
 			[61031]  = true, -- Toy Train Set
 			[62949]  = true, -- Wind-Up Train Wrecker
