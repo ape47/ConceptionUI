@@ -10,6 +10,7 @@ UnitPopupMenus['SELF'] = {
 	'LOOT_METHOD', 'LOOT_THRESHOLD', 'OPT_OUT_LOOT_TITLE', 'LOOT_PROMOTE',
 	'PVP_FLAG',
 	'INSTANCE_LEAVE', 'LEAVE',
+	'GARRISON_VISIT',
 	'INSPECT',
 	'CANCEL'
 }
@@ -270,9 +271,9 @@ hooksecurefunc(PaperDollTitlesPane, 'update', function()
 			buttons[i].checkbutton:Hide()
 		else
 			if titles[buttons[i].titleId] then
-				buttons[i].checkbutton:SetChecked(1)
+				buttons[i].checkbutton:SetChecked(true)
 			else
-				buttons[i].checkbutton:SetChecked(0)
+				buttons[i].checkbutton:SetChecked(false)
 			end
 			buttons[i].checkbutton:Show()
 		end

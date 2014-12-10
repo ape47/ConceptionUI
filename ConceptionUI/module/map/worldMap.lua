@@ -1,12 +1,11 @@
-WorldMapFrame.Position = WorldMapFrame:CreateFontString(nil, 'OVERLAY')
-WorldMapFrame.Position:SetFont(STANDARD_TEXT_FONT, 12, 'THINOUTLINE')
-WorldMapFrame.Position:SetPoint('BOTTOM', WorldMapPositioningGuide, 'BOTTOM', 0, 10)
+--WorldMapFrame.Position = WorldMapFrame:CreateFontString(nil, 'OVERLAY')
+--WorldMapFrame.Position:SetFont(STANDARD_TEXT_FONT, 12, 'THINOUTLINE')
 WorldMapFrame.Clock = WorldMapFrame:CreateFontString(nil, 'OVERLAY')
 WorldMapFrame.Clock:SetFont(DAMAGE_TEXT_FONT, 24, 'OUTLINE')
-WorldMapFrame.Clock:SetPoint('BOTTOM', WorldMapPositioningGuide, 'TOP', 0, 12)
+WorldMapFrame.Clock:SetPoint('TOPLEFT', WorldMapFrame.BorderFrame, 'TOPRIGHT', 12, 0)
 WorldMapFrame.Date = WorldMapFrame:CreateFontString(nil, 'OVERLAY')
 WorldMapFrame.Date:SetFont(DAMAGE_TEXT_FONT, 12, 'OUTLINE')
-WorldMapFrame.Date:SetPoint('BOTTOM', WorldMapFrame.Clock, 'TOP', 0, 12)
+WorldMapFrame.Date:SetPoint('TOP', WorldMapFrame.Clock, 'BOTTOM', 0, -12)
 
 local function GetCoordinate()
 	local x, y = GetPlayerMapPosition('player')
@@ -29,9 +28,9 @@ WorldMapFrame:HookScript('OnUpdate', OnUpdate)
 local function SetMap(self)
 	self:SetScale(.83)
 	BlackoutWorld:Hide()
+	--WorldMapFrame.Position:SetPoint('TOPLEFT', WorldMapFrame.BorderFrame, 'BOTTOMLEFT', 0, 0)
 end
 hooksecurefunc(WorldMapFrame, "Show", SetMap)
-
 
 
 local ROLE = {

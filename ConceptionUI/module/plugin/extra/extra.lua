@@ -15,3 +15,7 @@ PlayerPowerBarAlt:SetPoint('BOTTOM', UIParent, 'BOTTOM', 0, 340)
 --PlayerPowerBarAlt.SetPoint = function()end
 --PlayerPowerBarAlt:SetScale(1)
 PlayerPowerBarAlt.statusFrame.text:SetFont(DAMAGE_TEXT_FONT, 12, 'OUTLINE')
+
+DraenorZoneAbilityFrame:SetParent(ConceptionCORE)
+DraenorZoneAbilityFrame:SetPoint('BOTTOM', UIParent, 'BOTTOM', 0, 340)
+DraenorZoneAbilityFrame:SetScale(.83)

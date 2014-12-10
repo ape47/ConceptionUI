@@ -41,7 +41,8 @@ function Graphics.OnTooltipShow(tip)
 	tip:AddDoubleLine('gxColorBits', ('%sbit'):format(GetCVar('gxColorBits')), .62, .62, .62, .62, .62, .62)
 	tip:AddDoubleLine('gxDepthBits', ('%sbit'):format(GetCVar('gxDepthBits')), .62, .62, .62, .62, .62, .62)
 	tip:AddDoubleLine('gxRefresh', ('%sHz'):format(GetCVar('gxRefresh')), .62, .62, .62, .62, .62, .62)
-	tip:AddDoubleLine('gxMultisample', ('%sx'):format(GetCVar('gxMultisample')), .62, .62, .62, .62, .62, .62)
+
+	tip:AddDoubleLine(CVar('graphicsQuality'))
 	tip:AddDoubleLine(CVar('gxMultisampleQuality'))
 	tip:AddDoubleLine(CVar('gxTextureCacheSize')) -- Set the cache size
 	tip:AddDoubleLine(CVar('gxTripleBuffer'))

@@ -141,6 +141,8 @@ local function SetUnit(tip, unit)
 				local text = _G['GameTooltipTextLeft'..i]:GetText()	
 				if text:find('%d+/%d+') then
 					CACHE(text)
+					--local name, count, progress = text:match('^ ([^ ]-) ?-%s(%d+/%d+)%s(.+)$') --local playerName, progress = strmatch(text, '^ ([^ ]-) ?%- (.+)$')
+					--print(name, count, progress)
 				end
 			end
 			tip:ClearLines()
@@ -158,9 +160,11 @@ local function SetUnit(tip, unit)
 			if #CACHE > 0 then
 				tip:AddLine(' ')
 				for key, text in pairs(CACHE) do
-					local name, progress, count = text:match('^ ([^ ]-) ?%- (.+)%p%s-(%d+/%d+)$') --local playerName, progress = strmatch(text, '^ ([^ ]-) ?%- (.+)$')
-					local color = GetClass(name)
-					tip:AddDoubleLine(progress, ('|c%s%s|r %s'):format(color, name, count or ''), .62, .62, .62, .62, .62, .62)
+					--local name, progress, count = text:match('^ ([^ ]-) ?%- (.+)%p%s-(%d+/%d+)$') --local playerName, progress = strmatch(text, '^ ([^ ]-) ?%- (.+)$')
+				--	local name, count, progress = text:match('^ ([^ ]-) ?-%s(%d+/%d+)%s(.+)$')
+				--	local color = GetClass(name)
+				--	tip:AddDoubleLine(progress, ('|c%s%s|r %s'):format(color, name, count or ''), .62, .62, .62, .62, .62, .62)
+					tip:AddLine(text)
 				end
 				wipe(CACHE)
 			end

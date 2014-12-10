@@ -128,31 +128,32 @@ hooksecurefunc(DBT, 'CreateBar', ApplyBars)
 
 
 local function OnEvent()
-	DBT_SavedOptions['DBM'].Texture = BAR_TEXTURE
-	DBT_SavedOptions['DBM'].Font = DAMAGE_TEXT_FONT
-	DBT_SavedOptions['DBM'].FontSize = 12
-	DBT_SavedOptions['DBM'].Scale = 1
-	DBT_SavedOptions['DBM'].HugeScale = 1.6
-	DBT_SavedOptions['DBM'].Width = 200
-	DBT_SavedOptions['DBM'].HugeWidth = 200
-	DBT_SavedOptions['DBM'].BarYOffset = 3
-	DBT_SavedOptions['DBM'].HugeBarYOffset = 3
-	DBT_SavedOptions['DBM'].StartColorR = 1
-	DBT_SavedOptions['DBM'].StartColorG = 1
-	DBT_SavedOptions['DBM'].StartColorB = 1
-	DBT_SavedOptions['DBM'].EndColorR = .618
-	DBT_SavedOptions['DBM'].EndColorG = 0
-	DBT_SavedOptions['DBM'].EndColorB = 0
-	DBT_SavedOptions['DBM'].IconLeft = true
-	DBT_SavedOptions['DBM'].IconRight = false
-	DBT_SavedOptions['DBM'].FillUpBars = false
-	DBT_SavedOptions['DBM'].TimerPoint = 'LEFT'
-	DBT_SavedOptions['DBM'].TimerX = 135
-	DBT_SavedOptions['DBM'].TimerY = -5
-	DBT_SavedOptions['DBM'].HugeTimerPoint = 'TOP'
-	DBT_SavedOptions['DBM'].HugeTimerX = 0
-	DBT_SavedOptions['DBM'].HugeTimerY = -140
-
+	if DBT_SavedOptions['DBM'] then
+		DBT_SavedOptions['DBM'].Texture = BAR_TEXTURE
+		DBT_SavedOptions['DBM'].Font = DAMAGE_TEXT_FONT
+		DBT_SavedOptions['DBM'].FontSize = 12
+		DBT_SavedOptions['DBM'].Scale = 1
+		DBT_SavedOptions['DBM'].HugeScale = 1.6
+		DBT_SavedOptions['DBM'].Width = 200
+		DBT_SavedOptions['DBM'].HugeWidth = 200
+		DBT_SavedOptions['DBM'].BarYOffset = 3
+		DBT_SavedOptions['DBM'].HugeBarYOffset = 3
+		DBT_SavedOptions['DBM'].StartColorR = 1
+		DBT_SavedOptions['DBM'].StartColorG = 1
+		DBT_SavedOptions['DBM'].StartColorB = 1
+		DBT_SavedOptions['DBM'].EndColorR = .618
+		DBT_SavedOptions['DBM'].EndColorG = 0
+		DBT_SavedOptions['DBM'].EndColorB = 0
+		DBT_SavedOptions['DBM'].IconLeft = true
+		DBT_SavedOptions['DBM'].IconRight = false
+		DBT_SavedOptions['DBM'].FillUpBars = false
+		DBT_SavedOptions['DBM'].TimerPoint = 'LEFT'
+		DBT_SavedOptions['DBM'].TimerX = 135
+		DBT_SavedOptions['DBM'].TimerY = -5
+		DBT_SavedOptions['DBM'].HugeTimerPoint = 'TOP'
+		DBT_SavedOptions['DBM'].HugeTimerX = 0
+		DBT_SavedOptions['DBM'].HugeTimerY = -140
+	end
 	DBM_SavedOptions.LTSpecialWarningPoint = 'TOP'
 	DBM_SavedOptions.LTSpecialWarningX = 0
 	DBM_SavedOptions.LTSpecialWarningY = -100

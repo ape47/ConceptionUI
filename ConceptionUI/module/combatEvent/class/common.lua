@@ -20,6 +20,7 @@ function D.LOAD.I:LoadCombatEventCFG()
 			[54710]  = true, -- MOLL-E
 			[54735]  = true, -- Electromagnetic Pulse
 			[84348]  = true, -- nvisibility Field
+			[164729] = true, -- Ultimate Gnomish Army Knife
 		-- Toys
 			[6405]   = true, -- Dartol's Rod of Transformation
 			[49844]  = true, -- Direbrew's Remote
@@ -42,6 +43,7 @@ function D.LOAD.I:LoadCombatEventCFG()
 			[91771]  = true, -- Wisp Amulet
 			[96312]  = true, -- Kalytha's Haunted Locket
 			[46354]  = 46355, -- Orb of the Sin'dorei 46354 46355 46356
+			[148529] = true, -- Rime of the Time-Lost Mariner
 		-- Banquets
 			[104958] = true, -- Pandaren Banquet
 			[105193] = true, -- Great Pandaren Banquet

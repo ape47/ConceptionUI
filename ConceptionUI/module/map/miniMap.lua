@@ -20,10 +20,15 @@ function D.LOAD.M:SkinMinimap()
 
 	QueueStatusMinimapButton:ClearAllPoints()
 	QueueStatusMinimapButton:SetPoint('BOTTOMLEFT', Minimap, -7, -7)
+	QueueStatusMinimapButton:SetScale(.8)
 	QueueStatusMinimapButton:Show()
 
 	MiniMapRecordingButton:ClearAllPoints()
 	MiniMapRecordingButton:SetPoint('BOTTOMLEFT', Minimap, -7, 7)
+
+	GarrisonLandingPageMinimapButton:ClearAllPoints()
+	GarrisonLandingPageMinimapButton:SetPoint("TOPRIGHT", Minimap, "BOTTOMRIGHT", 10, -28)
+	GarrisonLandingPageMinimapButton:SetScale(.6)
 
 
 	MinimapBackdrop:SetPoint('TOPLEFT', Minimap, 'TOPLEFT', -5, 5)
@@ -80,7 +85,9 @@ function D.LOAD.M:SkinMinimap()
 
 	local function ShowGuildTabard()
 		if not MiniMapInstanceDifficulty:IsShown() and not MiniMapChallengeMode:IsShown() and not GuildInstanceDifficulty:IsShown() then
-			SetSmallGuildTabardTextures('player', GuildInstanceDifficulty.emblem, GuildInstanceDifficulty.background, GuildInstanceDifficulty.border)
+			SetSmallGuildTabardTextures('player', GuildInstanceDifficulty.emblem, GuildInstanceDifficulty.background, GuildInstanceDifficulty.border, 'Interface/PVPFrame/Icons/PVP-Banner-Emblem-2.png')
+			GuildInstanceDifficultyHanger:Hide()
+			GuildInstanceDifficultyMythicTexture:Hide()
 			GuildInstanceDifficultyChallengeModeTexture:Hide()
 			GuildInstanceDifficultyHeroicTexture:Hide()
 			GuildInstanceDifficultyText:SetText()
@@ -94,6 +101,7 @@ function D.LOAD.M:SkinMinimap()
 	GuildInstanceDifficulty.Button:SetAllPoints()
 	GuildInstanceDifficulty.Button:SetScript('OnClick', ToggleMinimap)
 
+	
 
 	do -- Hide Obj
 		LoadAddOn('Blizzard_TimeManager')
@@ -120,6 +128,8 @@ function D.LOAD.M:SkinMinimap()
 			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, self, 0, 0)
 		elseif button == 'LefttButton' then
 			Minimap_OnClick(self)
+		elseif button == 'MiddleButton' then
+			GarrisonLandingPage_Toggle()
 		end
 	end
 	Minimap:SetScript('OnMouseUp', OnMouseUp)

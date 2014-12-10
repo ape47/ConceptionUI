@@ -4,7 +4,7 @@ function D.LOAD.R:LoadPlayerFrame()
 	local cfg = D.CFG['UNITFRAME_MAJOR']
 	local func, api, texture, font = C.FUNC.UNIT, D.API, D.MEDIA.TEXTURE, D.MEDIA.FONT
 	local Frame, Button, Bar, Texture, String = api.Frame, api.Button, api.Bar, api.Texture, api.String
-	local F = Button('ConceptionUI PlayerFrame', C, 'BOTTOMRIGHT', UIParent, 'CENTER', -cfg.x, cfg.y-cfg.hpBarH-cfg.ppBarH-2, cfg.hpBarW, cfg.hpBarH+cfg.ppBarH+cfg.fontSize_info+cfg.fontSize, 'SecureUnitButtonTemplate')
+	local F = Button('ConceptionUI PlayerFrame', C, 'BOTTOMRIGHT', UIParent, 'CENTER', -cfg.x, cfg.y, cfg.hpBarW, cfg.hpBarH+cfg.ppBarH+cfg.fontSize+6, 'SecureUnitButtonTemplate')
 		F:SetAlpha(cfg.alpha)
 		F:SetBackdrop({bgFile=texture.blank})
 		F:SetBackdropColor(0,0,0,0)

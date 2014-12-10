@@ -156,17 +156,19 @@ hooksecurefunc('ActionButton_ShowGrid', UpdateAction)
 local ActionHasRange, IsActionInRange = ActionHasRange, IsActionInRange --local usable, oom = IsUsableAction(self.action)
 local function UpdateActioRange(self)
 	if not self.borderFrame then return end
-	if not ActionHasRange(self.action) or self.count:GetText()=='0' then return end
-	if IsActionInRange(self.action)~=0 then
-		self.borderFrame:SetBackdropBorderColor(.1, .1, .1, 1)
+	if not ActionHasRange(self.action) then return end
+	if self.count:GetText()=='0' then return end
+	if IsActionInRange(self.action) == false then
+		self.borderFrame:SetBackdropBorderColor(.6, .1, .1, 1)
 		return
 	else
-		self.borderFrame:SetBackdropBorderColor(.6, .1, .1, 1)
+		self.borderFrame:SetBackdropBorderColor(.1, .1, .1, 1)
 	end
 end
 hooksecurefunc('ActionButton_OnUpdate', UpdateActioRange)
 
 local function UpdatePetActionButton(self)
+	if not self:IsShown() then return end
 	for i = 1, 10 do
 		local button = _G['PetActionButton'..i]
 		button.normal_texture:SetTexture(TEXTURE.buttonOverlay)

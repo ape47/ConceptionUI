@@ -69,6 +69,7 @@ local function GetGlyph(spec)
 end
 
 local function GetTalent(spec)
+	if not Spec.spec then return end
 	local t = {}
 	for i = 1, 6 do
 		t[i] = ICON['EMPTY']
@@ -114,7 +115,6 @@ local function ShowMenu(self, button)
 end
 
 function Spec:Update()
-	self.value = GetActiveSpecGroup()
 	local spec = GetSpecialization()
 	if spec then
 		local id, _, _, _, _, role = GetSpecializationInfo(spec)
@@ -124,6 +124,8 @@ function Spec:Update()
 		self.text = '|cFF9E9E9ENONE|r'
 		UnitSetRole('player', nil)
 	end
+	self.spec = spec
+	self.value = GetActiveSpecGroup()
 	self.OnTooltipShow(GameTooltip)
 end
 

@@ -1,13 +1,19 @@
 local SlashCmdList = SlashCmdList
 
--- Set CVar
+-- ReloadUI()
+SLASH_RL1 = '/rl'
+SlashCmdList.RL = function()
+	ReloadUI()
+end
+
+-- SetCVar()
 SLASH_SCV1 = '/scv'
 SlashCmdList.SCV = function(x)
 	local cvar, n = x:match("^(%S*)%s*(%S*).-$")
 	SetCVar(cvar, n)
 end
 
--- Get CVar
+-- GetCVar()
 SLASH_GCV1 = '/gcv'
 SlashCmdList.GCV = function(cvar)
 	print(GetCVar(cvar))
@@ -111,4 +117,9 @@ SlashCmdList.NAMEPLATE = function(x)
 		for k, v in pairs(friend) do SetCVar(v, f) end
 		for k, v in pairs(enemy) do SetCVar(v, e) end
 	end
+end
+
+SLASH_MOUNT1 = '/mount'
+SlashCmdList.MOUNT = function()
+	C_MountJournal.Summon(0)
 end

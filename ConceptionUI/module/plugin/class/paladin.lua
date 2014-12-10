@@ -12,14 +12,14 @@ local function UpdateSpec(self)
 		buff = nil
 		buff_texture = nil
 	elseif spec == 3 then -- Retribution
-		buff = 84963 -- 異端
+		buff = 157048 -- 最終裁決
 		buff_texture = [[Interface\AddOns\ConceptionUI\media\texture\holyPower\inq]]
 	elseif spec == 2 then -- Protection
 		buff = 132403 -- 公正盾
 		buff_texture = [[Interface\AddOns\ConceptionUI\media\texture\holyPower\sor]]
-	elseif spec == 1 then -- Holy
-		buff = 88819 -- 破曉之光
-		buff_texture = [[Interface\AddOns\ConceptionUI\media\texture\holyPower\sor]]
+--	elseif spec == 1 then -- Holy
+--		buff = 88819 -- 破曉之光
+--		buff_texture = [[Interface\AddOns\ConceptionUI\media\texture\holyPower\sor]]
 	end
 	buff = GetSpellInfo(buff)
 	self.BG:SetTexture(buff_texture)

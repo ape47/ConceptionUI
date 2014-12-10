@@ -117,7 +117,7 @@ function D.LOAD.E:LoadCombatEventCLEU()
 		end
 	end
 
-	local function Attacked(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, amount, overKill, school, resisted, blocked, absorbed, critical)
+	local function Attacked(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, amount, overKill, school, resisted, blocked, absorbed, critical, glancing, crushing, isOffHand, multistrike)
 		local frame = GetDisplayFrame(destGUID, true)
 		if not frame then return end
 		if not critical then
@@ -132,14 +132,14 @@ function D.LOAD.E:LoadCombatEventCLEU()
 		end
 	end
 
-	local function AttackMissed(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, missType, isOffHand, amountMissed)
+	local function AttackMissed(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, missType, isOffHand, multistrike, amountMissed)
 		local frame = GetDisplayFrame(destGUID, true)
 		if not frame then return end
 		tinsert(self.EVENT_CACHE[frame], {'OUT', spellID, nil, missType, COLOR(spellSchool)})
 		self:UpdateDisplay(frame)
 	end
 
-	local function Healed(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, amount, overKill, school, resisted, blocked, absorbed, critical)
+	local function Healed(self, sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, spellID, spellName, spellSchool, amount, overKill, school, resisted, blocked, absorbed, critical, multistrike)
 		local frame = GetDisplayFrame(destGUID, true)
 		if not frame then return end
 		if self.EVENT_CACHE[frame..'scroll'] then
@@ -169,7 +169,7 @@ function D.LOAD.E:LoadCombatEventCLEU()
 		CLEU['SPELL_PERIODIC_MISSED'] = AttackMissed
 
 
-	function CLEU:SWING_DAMAGE(sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, amount, overKill, school, resisted, blocked, absorbed, critical, glancing, crushing)
+	function CLEU:SWING_DAMAGE(sourceGUID, sourceName, sourceFlags1, sourceFlags2, destGUID, destName, destFlags1, destFlags2, amount, overKill, school, resisted, blocked, absorbed, critical, glancing, crushing, isOffHand, multistrike)
 		return Attacked(self, sourceGUID, _, _, _, destGUID, _, _, _, 46917, nil, 1, amount, overKill, school, resisted, blocked, absorbed, critical  or crushing)
 	end
 

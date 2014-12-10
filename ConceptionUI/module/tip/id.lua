@@ -30,10 +30,10 @@ GameTooltip:HookScript('OnTooltipSetItem', AddItemID)
 ItemRefTooltip:HookScript('OnTooltipSetItem', AddItemID)
 ShoppingTooltip1:HookScript('OnTooltipSetItem', AddItemID)
 ShoppingTooltip2:HookScript('OnTooltipSetItem', AddItemID)
-ShoppingTooltip3:HookScript('OnTooltipSetItem', AddItemID)
+--ShoppingTooltip3:HookScript('OnTooltipSetItem', AddItemID)
 ItemRefShoppingTooltip1:HookScript('OnTooltipSetItem', AddItemID)
 ItemRefShoppingTooltip2:HookScript('OnTooltipSetItem', AddItemID)
-ItemRefShoppingTooltip3:HookScript('OnTooltipSetItem', AddItemID)
+--ItemRefShoppingTooltip3:HookScript('OnTooltipSetItem', AddItemID)
 
 
 local function AddLinkID(self, link)

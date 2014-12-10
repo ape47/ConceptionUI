@@ -223,9 +223,9 @@ function D.LOAD.M:LoadCombatEvent()
 	end
 
 	for i = 1, 10 do
-		CombatEvent.EVENT_FRAME['playerscroll'..i] = CreateScroll(C.UNITFRAME.Major['player'], 'RIGHT', 'LEFT', -10, -10, -1)
+		CombatEvent.EVENT_FRAME['playerscroll'..i] = CreateScroll(C.UNITFRAME.Major['player'], 'RIGHT', 'LEFT', -64, -10, -1)
 		CombatEvent.EVENT_FRAME['playerscroll'..i].cache = CombatEvent.EVENT_CACHE['playerscroll']
-		CombatEvent.EVENT_FRAME['targetscroll'..i] = CreateScroll(C.UNITFRAME.Major['target'], 'LEFT', 'RIGHT', 10, -10, 1)
+		CombatEvent.EVENT_FRAME['targetscroll'..i] = CreateScroll(C.UNITFRAME.Major['target'], 'LEFT', 'RIGHT', 64, -10, 1)
 		CombatEvent.EVENT_FRAME['targetscroll'..i].cache = CombatEvent.EVENT_CACHE['targetscroll']
 	end
 

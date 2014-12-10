@@ -17,15 +17,16 @@ ITEM_SET_BONUS_GRAY = 'SET(%d): %s'
 --local GetMouseFocus, WorldFrame = GetMouseFocus, WorldFrame
 local UIParent = UIParent
 local function SetAnchor(tip, parent)
-	if GetMouseFocus() == WorldFrame then
+	--if GetMouseFocus() == WorldFrame then
+		tip:SetOwner(parent, 'ANCHOR_CURSOR_RIGHT', 10, 10)
 		--if  parent == UIParent then
-			tip:SetOwner(parent, 'ANCHOR_CURSOR_RIGHT', 10, 10)
-			return
-		else
-			tip:SetOwner(parent, 'ANCHOR_NONE')	
-			tip:SetPoint('BOTTOMRIGHT', UIParent, 'BOTTOMRIGHT', -96, 96)
-	end
-	tip.default = 1
+		--	tip:SetOwner(parent, 'ANCHOR_CURSOR_RIGHT', 10, 10)
+		--else
+		--	tip:SetOwner(parent, 'ANCHOR_NONE')	
+		--	tip:SetPoint('BOTTOMRIGHT', UIParent, 'BOTTOMRIGHT', -96, 96)
+		--end
+	--end
+	--tip.default = 1
 end
 hooksecurefunc('GameTooltip_SetDefaultAnchor', SetAnchor)
 
@@ -69,11 +70,13 @@ end
 
 hookCompareItems(ShoppingTooltip1)
 hookCompareItems(ShoppingTooltip2)
-hookCompareItems(ShoppingTooltip3)
+--hookCompareItems(ShoppingTooltip3)
 hookCompareItems(ItemRefShoppingTooltip1)
 hookCompareItems(ItemRefShoppingTooltip2)
-hookCompareItems(ItemRefShoppingTooltip3)
+--hookCompareItems(ItemRefShoppingTooltip3)
 
 
 tinsert(UISpecialFrames, 'FloatingBattlePetTooltip')
 tinsert(UISpecialFrames, 'FloatingPetBattleAbilityTooltip')
+
+SetCVar('alwaysCompareItems', 1)
